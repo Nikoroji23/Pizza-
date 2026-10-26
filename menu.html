@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Specialty Menu | Anti-Crust Pizza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- navbar is inserted here by js/layout.js -->
+  <div id="navbar"></div>
+
+  <main>
+
+    <div class="container page">
+      <div class="page-head">
+        <div>
+          <p class="eyebrow">Signature recipes</p>
+          <h1 class="page-title">Specialty Menu</h1>
+          <p class="page-sub">Chef-designed pizzas, ready to add to your cart.</p>
+        </div>
+        <div class="tabs" id="category-tabs">
+          <button class="tab active" data-category="all">All</button>
+          <button class="tab" data-category="specialty">Specialty</button>
+          <button class="tab" data-category="veg">Veg</button>
+          <button class="tab" data-category="gourmet">Gourmet</button>
+        </div>
+      </div>
+
+      <!-- cards are drawn here by js/pages/menu.js -->
+      <div class="grid grid-3" id="pizza-grid"></div>
+
+      <div class="dark-banner">
+        <div>
+          <h3>Want it your way?</h3>
+          <p>Pick your own crust, sauce, cheese and toppings in the pizza builder.</p>
+        </div>
+        <a class="btn btn-primary" href="builder.html">Build a Custom Pizza →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- footer is inserted here by js/layout.js -->
+  <div id="footer"></div>
+
+  <!-- Scripts: order matters! Each file uses the ones loaded before it. -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pages/menu.js"></script>
+</body>
+</html>

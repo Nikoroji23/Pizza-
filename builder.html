@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Pizza Builder | Anti-Crust Pizza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- navbar is inserted here by js/layout.js -->
+  <div id="navbar"></div>
+
+  <main>
+
+    <div class="container page">
+      <div class="page-head">
+        <div>
+          <p class="eyebrow">Your pizza, your rules</p>
+          <h1 class="page-title">Custom Pizza Builder</h1>
+          <p class="page-sub">Pick one base, one sauce, one cheese and as many veggies as you like.</p>
+        </div>
+        <div class="step-nav">
+          <button class="step-btn active" data-goto="1">1 · Base</button>
+          <button class="step-btn" data-goto="2">2 · Sauce</button>
+          <button class="step-btn" data-goto="3">3 · Cheese</button>
+          <button class="step-btn" data-goto="4">4 · Veggies</button>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <div class="card step-panel active" data-step="1">
+            <div class="step-panel-head">
+              <div><span class="step-count">Step 1 of 4</span><h2>Choose Pizza Base</h2></div>
+              <span class="step-hint">Single select</span>
+            </div>
+            <div class="option-grid" id="options-base"></div>
+            <div class="step-actions end"><button class="btn btn-solid" data-goto="2">Continue to Sauces →</button></div>
+          </div>
+          <div class="card step-panel" data-step="2">
+            <div class="step-panel-head">
+              <div><span class="step-count">Step 2 of 4</span><h2>Choose Sauce</h2></div>
+              <span class="step-hint">Single select</span>
+            </div>
+            <div class="option-grid" id="options-sauce"></div>
+            <div class="step-actions"><button class="btn btn-light" data-goto="1">← Back</button><button class="btn btn-solid" data-goto="3">Continue to Cheese →</button></div>
+          </div>
+          <div class="card step-panel" data-step="3">
+            <div class="step-panel-head">
+              <div><span class="step-count">Step 3 of 4</span><h2>Choose Cheese</h2></div>
+              <span class="step-hint">Single select</span>
+            </div>
+            <div class="option-grid" id="options-cheese"></div>
+            <div class="step-actions"><button class="btn btn-light" data-goto="2">← Back</button><button class="btn btn-solid" data-goto="4">Continue to Veggies →</button></div>
+          </div>
+          <div class="card step-panel" data-step="4">
+            <div class="step-panel-head">
+              <div><span class="step-count">Step 4 of 4</span><h2>Choose Fresh Veggies</h2></div>
+              <span class="badge badge-brand" id="veg-count">Multiple Select (0 selected)</span>
+            </div>
+            <div class="option-grid" id="options-vegetable"></div>
+            <div class="step-actions"><button class="btn btn-light" data-goto="3">← Back</button></div>
+          </div>
+        </div>
+
+        <div class="sticky-col">
+          <!-- live pizza drawing, made by js/pizza-preview.js -->
+          <div id="preview"></div>
+
+          <div class="card">
+            <label class="field" style="display:block;margin-bottom:16px">
+              <span class="label">Name your creation</span>
+              <input class="input" id="pizza-name" type="text" value="My Custom Artisan Pizza" maxlength="40">
+            </label>
+            <div class="row-between" style="margin-bottom:16px">
+              <div class="qty">
+                <button type="button" id="qty-minus">−</button>
+                <span id="qty-value">1</span>
+                <button type="button" id="qty-plus">＋</button>
+              </div>
+              <div style="text-align:right"><small class="muted">Total</small><div class="total-line" id="total-price">₱0</div></div>
+            </div>
+            <button class="btn btn-primary btn-block" id="add-btn" type="button">🛍️ Add Custom Pizza to Cart</button>
+            <a class="btn btn-dark btn-block" id="go-cart" href="cart.html" style="margin-top:10px" hidden>Go to Cart →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- footer is inserted here by js/layout.js -->
+  <div id="footer"></div>
+
+  <!-- Scripts: order matters! Each file uses the ones loaded before it. -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pizza-preview.js"></script>
+  <script src="js/pages/builder.js"></script>
+</body>
+</html>

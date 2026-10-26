@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Anti-Crust Pizza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- navbar is inserted here by js/layout.js -->
+  <div id="navbar"></div>
+
+  <main>
+
+    <div class="container page">
+      <div class="page-head">
+        <div>
+          <p class="eyebrow">Secure checkout</p>
+          <h1 class="page-title">Delivery &amp; Payment</h1>
+        </div>
+      </div>
+
+      <div class="card empty-box" id="checkout-empty" hidden>
+        <div class="big">🛍️</div>
+        <h3>Nothing to check out</h3>
+        <a class="btn btn-solid" href="menu.html" style="margin-top:16px">Browse Menu</a>
+      </div>
+
+      <div class="two-col wide-left" id="checkout-content" hidden>
+        <form class="card" id="checkout-form">
+          <h3>Delivery Address</h3>
+          <div class="form-grid">
+            <label class="field"><span class="label">Street address</span><input class="input" id="street" required></label>
+            <div class="form-grid cols-2">
+              <label class="field"><span class="label">City</span><input class="input" id="city" required></label>
+              <label class="field"><span class="label">State</span><input class="input" id="state" required></label>
+            </div>
+            <div class="form-grid cols-2">
+              <label class="field"><span class="label">Zip code</span><input class="input" id="zip" required></label>
+              <label class="field"><span class="label">Phone</span><input class="input" id="phone" type="tel" required></label>
+            </div>
+            <div class="alert alert-error" id="checkout-error" hidden></div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to Payment →</button>
+          </div>
+        </form>
+
+        <div class="card">
+          <h3>Your Order</h3>
+          <div class="mini-list" id="mini-items"></div>
+          <div class="summary-lines" id="sum-lines"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== Fake payment pop-up (opened by js/pages/checkout.js) ========== -->
+    <div class="modal-backdrop" id="pay-modal" hidden>
+      <div class="modal">
+        <div class="modal-head">
+          <div>
+            <h3>Anti-Crust Secure Pay</h3>
+            <small>Simulated payment gateway</small>
+          </div>
+          <div class="row"><span class="test-pill">Test mode</span><button class="close-btn" id="pay-close" type="button" style="color:#fff">✕</button></div>
+        </div>
+
+        <div class="modal-order">
+          <div><small>Paying for</small><strong id="pay-order-ref">Order</strong></div>
+          <span class="amount" id="pay-amount">₱0</span>
+        </div>
+
+        <div class="modal-body">
+          <p class="section-label">Choose payment method</p>
+          <div class="pay-methods" id="pay-methods">
+            <button type="button" class="pay-method active" data-method="card"><span>💳</span>Card</button>
+            <button type="button" class="pay-method" data-method="upi"><span>📱</span>UPI</button>
+            <button type="button" class="pay-method" data-method="netbanking"><span>🏦</span>Net Banking</button>
+          </div>
+
+          <!-- CARD -->
+          <div class="pay-pane active" data-pane="card">
+            <div>
+              <label for="card-number">Card number</label>
+              <div class="card-wrap">
+                <input class="input mono" id="card-number" inputmode="numeric" placeholder="4111 1111 1111 1111" value="4111 1111 1111 1111" autocomplete="off">
+                <span class="card-brand" id="card-brand">VISA</span>
+              </div>
+              <p class="field-error" id="err-card"></p>
+            </div>
+            <div class="form-grid cols-2">
+              <div>
+                <label for="card-expiry">Expiry (MM/YY)</label>
+                <input class="input mono" id="card-expiry" inputmode="numeric" placeholder="12/30" value="12/30" autocomplete="off">
+                <p class="field-error" id="err-expiry"></p>
+              </div>
+              <div>
+                <label for="card-cvv">CVV</label>
+                <input class="input mono" id="card-cvv" inputmode="numeric" placeholder="123" value="123" autocomplete="off">
+                <p class="field-error" id="err-cvv"></p>
+              </div>
+            </div>
+            <div>
+              <label for="card-name">Name on card</label>
+              <input class="input" id="card-name" autocomplete="off">
+              <p class="field-error" id="err-name"></p>
+            </div>
+            <p class="sandbox-note">Test card prefilled. Any card passing the Luhn check works. No real money is charged.</p>
+          </div>
+
+          <!-- UPI -->
+          <div class="pay-pane" data-pane="upi">
+            <div>
+              <label for="upi-id">UPI ID</label>
+              <input class="input" id="upi-id" placeholder="yourname@bank" value="success@upi" autocomplete="off">
+              <p class="field-error" id="err-upi"></p>
+            </div>
+            <p class="sandbox-note">Simulated. Any ID like name@bank will succeed.</p>
+          </div>
+
+          <!-- NET BANKING -->
+          <div class="pay-pane" data-pane="netbanking">
+            <div>
+              <label for="bank">Select your bank</label>
+              <select class="input" id="bank">
+                <option>Test Bank of Anti-Crust</option>
+                <option>Demo National Bank</option>
+                <option>Sandbox Savings</option>
+              </select>
+            </div>
+            <div class="info-box">You would normally be redirected to your bank's page. In this demo, press Pay to simulate a successful bank transfer.</div>
+          </div>
+        </div>
+
+        <div class="modal-foot">
+          <button class="btn btn-outline" id="pay-cancel" type="button">Cancel</button>
+          <button class="btn btn-solid" id="pay-confirm" type="button" style="flex:1">Pay</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- footer is inserted here by js/layout.js -->
+  <div id="footer"></div>
+
+  <!-- Scripts: order matters! Each file uses the ones loaded before it. -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pages/checkout.js"></script>
+</body>
+</html>

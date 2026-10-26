@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders | Anti-Crust Pizza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- navbar is inserted here by js/layout.js -->
+  <div id="navbar"></div>
+
+  <main>
+
+    <div class="container page">
+      <div class="greeting">
+        <div>
+          <span class="chip-dark">Welcome back</span>
+          <h1 id="hello-name">Hello</h1>
+          <p id="hello-email"></p>
+        </div>
+        <div style="text-align:right">
+          <p style="font-size:12px;color:#94a3b8;text-transform:uppercase;letter-spacing:.06em">Total orders</p>
+          <p style="font-size:34px;font-weight:900" id="order-count">0</p>
+        </div>
+      </div>
+
+      <div class="underline-tabs">
+        <button class="utab active" data-tab="orders">My Orders</button>
+        <button class="utab" data-tab="profile">Profile &amp; Address</button>
+      </div>
+
+      <div class="tab-pane active" id="pane-orders">
+        <div>
+          <h2 class="section-heading" style="margin-bottom:16px"><span class="ping"></span> Live Orders</h2>
+          <div class="stack" id="active-orders"></div>
+        </div>
+        <div id="past-section" hidden>
+          <h2 class="section-heading" style="margin-bottom:16px">Order History</h2>
+          <div class="past-list" id="past-orders"></div>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="pane-profile">
+        <form class="card profile-card" id="profile-form">
+          <h3>Profile &amp; Default Delivery Address</h3>
+          <div class="form-grid">
+            <div class="form-grid cols-2">
+              <label class="field"><span class="label">Full name</span><input class="input" id="p-name" required></label>
+              <label class="field"><span class="label">Email (cannot be changed)</span><input class="input" id="p-email" disabled></label>
+            </div>
+            <label class="field"><span class="label">Street address</span><input class="input" id="p-street"></label>
+            <div class="form-grid cols-3">
+              <label class="field"><span class="label">City</span><input class="input" id="p-city"></label>
+              <label class="field"><span class="label">State</span><input class="input" id="p-state"></label>
+              <label class="field"><span class="label">Zip</span><input class="input" id="p-zip"></label>
+            </div>
+            <label class="field"><span class="label">Phone</span><input class="input" id="p-phone" type="tel"></label>
+            <button class="btn btn-primary" type="submit" style="justify-self:start">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- footer is inserted here by js/layout.js -->
+  <div id="footer"></div>
+
+  <!-- Scripts: order matters! Each file uses the ones loaded before it. -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pages/dashboard.js"></script>
+</body>
+</html>

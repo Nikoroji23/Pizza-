@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Anti-Crust Pizza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- navbar is inserted here by js/layout.js -->
+  <div id="navbar"></div>
+
+  <main>
+
+    <div class="container page">
+      <div class="page-head">
+        <div>
+          <span class="admin-chip">🛡️ Admin</span>
+          <h1 class="page-title" style="margin-top:8px">Operations Overview</h1>
+          <p class="page-sub">Live numbers from orders and inventory.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="metric"><div class="metric-top">Total orders <span class="metric-icon bg-blue">🧾</span></div><strong id="m-orders">0</strong><small>All time</small></div>
+        <div class="metric"><div class="metric-top">In the kitchen <span class="metric-icon bg-amber">👨‍🍳</span></div><strong id="m-kitchen">0</strong><small>Received + preparing</small></div>
+        <div class="metric"><div class="metric-top">Low stock items <span class="metric-icon bg-red">⚠️</span></div><strong id="m-low">0</strong><small>At or below threshold</small></div>
+        <div class="metric"><div class="metric-top">Revenue <span class="metric-icon bg-green">💰</span></div><strong id="m-revenue">₱0.00</strong><small>Excludes cancelled orders</small></div>
+      </div>
+
+      <div class="grid grid-2">
+        <a class="nav-card" href="admin-inventory.html">
+          <div><div class="metric-icon bg-brand">📦</div><h3>Inventory &amp; Stock</h3><p>Restock ingredients, adjust thresholds and run stock audits.</p></div>
+          <span class="nav-arrow">→</span>
+        </a>
+        <a class="nav-card" href="admin-orders.html">
+          <div><div class="metric-icon bg-blue">🧾</div><h3>Order Dispatch</h3><p>See incoming orders and move them from kitchen to delivery.</p></div>
+          <span class="nav-arrow">→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card"><h3>Newest Orders</h3><div id="recent-orders"></div></div>
+        <div class="card"><h3>Low Stock Alerts</h3><div id="low-list"></div></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- footer is inserted here by js/layout.js -->
+  <div id="footer"></div>
+
+  <!-- Scripts: order matters! Each file uses the ones loaded before it. -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pages/admin-dashboard.js"></script>
+</body>
+</html>

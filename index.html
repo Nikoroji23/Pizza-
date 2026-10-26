@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Anti-Crust Pizza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- navbar is inserted here by js/layout.js -->
+  <div id="navbar"></div>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-tag">🔥 Fresh from the oven</span>
+          <h1>No limits.<br><span class="gradient-text">Just pure crust rebellion.</span></h1>
+          <p class="lead">Build your own masterpiece with live ingredient stock, or pick one of our signature specialty pizzas. Track your order from the oven to your door.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary btn-lg" href="builder.html">✨ Build Your Own Pizza</a>
+            <a class="btn btn-glass btn-lg" href="menu.html">View Specialty Menu</a>
+          </div>
+          <div class="hero-checks">
+            <span>Automated inventory sync</span>
+            <span>Live order tracker</span>
+            <span>Test-mode checkout</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <div class="dots"><i></i><i></i><i></i></div>
+            <small>LIVE KITCHEN STATUS</small>
+          </div>
+          <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&auto=format&fit=crop&q=80" alt="Signature pizza">
+            <div class="hero-img-info">
+              <div><strong>The Anti-Crust Supreme</strong><small>Customer favorite</small></div>
+              <span class="price-chip">₱499</span>
+            </div>
+          </div>
+          <div class="hero-steps"><i></i><i></i><i></i><i></i></div>
+          <div class="row-between" style="margin-bottom:14px"><span>Kitchen status</span><b>Accepting Orders</b></div>
+          <a class="hero-launch" href="builder.html">Customize this pizza →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-title">
+        <h2>Why order from Anti-Crust?</h2>
+        <p>We combined real kitchen workflow with an easy ordering experience.</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="feature">
+          <div class="feature-icon" style="background:linear-gradient(135deg,#fb923c,#e11d48)">🍕</div>
+          <h3>Custom Pizza Builder</h3>
+          <p>Choose from 5 crusts, 5 sauces, 5 cheeses and 8 fresh veggies. Watch your pizza take shape as you click.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon" style="background:linear-gradient(135deg,#60a5fa,#4f46e5)">📦</div>
+          <h3>Live Inventory</h3>
+          <p>Every ingredient has real stock numbers. Sold-out items are disabled, so you never order something we can't make.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon" style="background:linear-gradient(135deg,#34d399,#0d9488)">🛵</div>
+          <h3>Live Order Tracker</h3>
+          <p>Follow your order from Received to In Kitchen to Sent to Delivery to Delivered, updating instantly.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon" style="background:linear-gradient(135deg,#a78bfa,#9333ea)">🛡️</div>
+          <h3>Kitchen Admin Panel</h3>
+          <p>Staff can restock ingredients, run stock audits and dispatch orders from a protected dashboard.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pb-section container">
+      <div class="cta-banner">
+        <div>
+          <h3>Hungry for something different?</h3>
+          <p>Create a free account to save your address, place orders and follow them live.</p>
+        </div>
+        <a class="btn btn-white btn-lg" href="register.html">Create Free Account</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer is inserted here by js/layout.js -->
+  <div id="footer"></div>
+
+  <!-- Scripts: order matters! Each file uses the ones loaded before it. -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/layout.js"></script>
+</body>
+</html>

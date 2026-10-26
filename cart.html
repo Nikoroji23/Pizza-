@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart | Anti-Crust Pizza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- navbar is inserted here by js/layout.js -->
+  <div id="navbar"></div>
+
+  <main>
+
+    <div class="container page">
+      <div class="page-head">
+        <div>
+          <p class="eyebrow">Almost there</p>
+          <h1 class="page-title">Your Cart</h1>
+        </div>
+      </div>
+
+      <div class="card empty-box" id="cart-empty" hidden>
+        <div class="big">🛍️</div>
+        <h3>Your cart is empty</h3>
+        <p class="muted small">Add a specialty pizza or build your own.</p>
+        <div class="row" style="justify-content:center;margin-top:16px">
+          <a class="btn btn-solid" href="menu.html">Browse Menu</a>
+          <a class="btn btn-dark" href="builder.html">Build a Pizza</a>
+        </div>
+      </div>
+
+      <div class="two-col wide-left" id="cart-content" hidden>
+        <div class="stack" id="cart-list"></div>
+        <div class="card">
+          <h3>Order Summary</h3>
+          <div class="summary-lines" id="cart-summary"></div>
+          <button class="btn btn-primary btn-block btn-lg" id="checkout-btn" type="button" style="margin-top:20px">Proceed to Checkout →</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- footer is inserted here by js/layout.js -->
+  <div id="footer"></div>
+
+  <!-- Scripts: order matters! Each file uses the ones loaded before it. -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pages/cart.js"></script>
+</body>
+</html>

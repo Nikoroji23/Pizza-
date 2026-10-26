@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Placed | Anti-Crust Pizza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- navbar is inserted here by js/layout.js -->
+  <div id="navbar"></div>
+
+  <main>
+
+    <div class="container" id="success-box">
+      <div class="success-card">
+        <div class="success-icon">🎉</div>
+        <span class="pill-green">Payment successful</span>
+        <h1 class="page-title">Your order is in the kitchen!</h1>
+        <p class="muted">Order <b id="order-number">—</b> • Total <b id="order-total">—</b></p>
+        <p class="ref-box">Payment reference: <span id="pay-ref">—</span></p>
+        <div class="row" style="flex-wrap:wrap;justify-content:center">
+          <a class="btn btn-primary btn-lg" id="track-link" href="dashboard.html">Track My Order →</a>
+          <a class="btn btn-outline btn-lg" href="menu.html">Order More</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- footer is inserted here by js/layout.js -->
+  <div id="footer"></div>
+
+  <!-- Scripts: order matters! Each file uses the ones loaded before it. -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pages/order-success.js"></script>
+</body>
+</html>

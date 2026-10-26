@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Anti-Crust Pizza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- navbar is inserted here by js/layout.js -->
+  <div id="navbar"></div>
+
+  <main>
+
+    <div class="narrow narrow-lg">
+      <div class="auth-head">
+        <div class="auth-icon">🍕</div>
+        <h1>Join Anti-Crust</h1>
+        <p>Create your free account in under a minute</p>
+      </div>
+      <div class="card auth-card">
+        <form id="register-form">
+          <div class="alert alert-error" id="register-error" hidden></div>
+          <label class="field"><span class="label">Full name</span><input class="input" id="name" required></label>
+          <label class="field"><span class="label">Email</span><input class="input" id="email" type="email" required autocomplete="username"></label>
+          <div class="form-grid cols-2">
+            <label class="field"><span class="label">Password</span><input class="input" id="password" type="password" minlength="6" required autocomplete="new-password"></label>
+            <label class="field"><span class="label">Confirm password</span><input class="input" id="confirm" type="password" minlength="6" required autocomplete="new-password"></label>
+          </div>
+          <label class="field"><span class="label">Street address (optional)</span><input class="input" id="street"></label>
+          <div class="form-grid cols-2">
+            <label class="field"><span class="label">City (optional)</span><input class="input" id="city"></label>
+            <label class="field"><span class="label">Phone (optional)</span><input class="input" id="phone" type="tel"></label>
+          </div>
+          <button class="btn btn-primary btn-block btn-submit" type="submit">Create Account</button>
+        </form>
+        <p class="auth-foot">Already have an account? <a class="link" href="login.html">Log in</a></p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- footer is inserted here by js/layout.js -->
+  <div id="footer"></div>
+
+  <!-- Scripts: order matters! Each file uses the ones loaded before it. -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pages/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Dispatch | Anti-Crust Pizza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- navbar is inserted here by js/layout.js -->
+  <div id="navbar"></div>
+
+  <main>
+
+    <div class="container page">
+      <div class="page-head">
+        <div>
+          <span class="admin-chip">🛡️ Admin</span>
+          <h1 class="page-title" style="margin-top:8px">Order Dispatch</h1>
+          <p class="page-sub">Open the customer's order page in another tab to watch the tracker update live.</p>
+        </div>
+      </div>
+
+      <div class="row-between" style="flex-wrap:wrap">
+        <div class="tabs" id="order-tabs"></div>
+        <label class="search"><span>🔎</span><input class="input" id="order-search" placeholder="Order # or phone…"></label>
+      </div>
+
+      <div class="stack" id="orders-list"></div>
+    </div>
+
+  </main>
+
+  <!-- footer is inserted here by js/layout.js -->
+  <div id="footer"></div>
+
+  <!-- Scripts: order matters! Each file uses the ones loaded before it. -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pages/admin-orders.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Anti-Crust Pizza</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- navbar is inserted here by js/layout.js -->
+  <div id="navbar"></div>
+
+  <main>
+
+    <div class="narrow">
+      <div class="auth-head">
+        <div class="auth-icon dark">🛡️</div>
+        <h1>Kitchen Admin</h1>
+        <p>Authorized staff only</p>
+      </div>
+      <div class="card auth-card">
+        <div class="demo-box">
+          <b>Demo admin:</b> admin@anticrust.com / Admin@12345<br>
+          <button type="button" id="fill-admin">Fill it in for me</button>
+        </div>
+        <form id="admin-form">
+          <div class="alert alert-error" id="admin-error" hidden></div>
+          <label class="field"><span class="label">Admin email</span>
+            <div class="input-icon"><span>✉️</span><input class="input" id="email" type="email" required autocomplete="username"></div>
+          </label>
+          <label class="field"><span class="label">Password</span>
+            <div class="input-icon"><span>🔒</span><input class="input" id="password" type="password" required autocomplete="current-password"></div>
+          </label>
+          <button class="btn btn-dark btn-block btn-submit" type="submit">Enter Admin Panel</button>
+        </form>
+        <p class="auth-foot"><a class="link" href="login.html">Customer login →</a></p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- footer is inserted here by js/layout.js -->
+  <div id="footer"></div>
+
+  <!-- Scripts: order matters! Each file uses the ones loaded before it. -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/pages/admin-login.js"></script>
+</body>
+</html>
